@@ -1,0 +1,15 @@
+# Entorno virtual
+venv/
+
+# Archivos compilados
+__pycache__/
+*.pyc
+
+# Base de datos
+*.db
+
+# Archivos generados
+*.xlsx
+
+# Archivos del sistema
+.DS_Store

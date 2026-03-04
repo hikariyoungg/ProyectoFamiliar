@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="GET">
+    <input type="text" name="q" placeholder="Buscar producto..."
+           value="{{ busqueda }}">
+    <button type="submit">Buscar</button>
+</form>
+<br>
+
+<h2>Inventario</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Categoría</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Stock mínimo</th>
+        <th>Proveedor</th>
+        <th>Acciones</th>
+    </tr>
+
+    {% for producto in productos %}
+    <tr>
+        <td>{{ producto.id }}</td>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.categoria }}</td>
+        <td>{{ producto.precio }}</td>
+        <td>{{ producto.stock }}</td>
+        <td>{{ producto.stock_minimo }}</td>
+        <td>{{ producto.proveedor }}</td>
+        <td>
+            <a href="/editar/{{ producto.id }}">Editar</a>
+            <a href="/eliminar/{{ producto.id }}">Eliminar</a>
+            <a href="/vender/{{ producto.id }}">Vender</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

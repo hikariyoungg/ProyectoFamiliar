@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vender Producto</title>
+</head>
+<body>
+
+<h1>Vender {{ producto.nombre }}</h1>
+
+<p>Stock disponible: <strong>{{ producto.stock }}</strong></p>
+
+<form method="POST">
+    <label>Cantidad a vender:</label><br>
+    <input type="number" name="cantidad" min="1" required><br><br>
+
+    <button type="submit">Confirmar venta</button>
+</form>
+
+<br>
+<a href="/">Volver</a>
+
+</body>
+</html>

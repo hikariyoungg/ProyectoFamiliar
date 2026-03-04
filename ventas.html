@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Ventas del día ({{ hoy }})</h2>
+<h3>Total vendido hoy: ${{ total_general }}</h3>
+<br>
+<a href="/exportar_ventas">Exportar a Excel</a>
+<br><br>
+<table>
+    <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Total</th>
+        <th>Hora</th>
+    </tr>
+
+    {% for venta in ventas %}
+    <tr>
+        <td>{{ venta.nombre }}</td>
+        <td>{{ venta.cantidad }}</td>
+        <td>{{ venta.precio }}</td>
+        <td>{{ venta.total }}</td>
+        <td>{{ venta.fecha }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
